@@ -1,0 +1,18 @@
+{% extends "home/base.html" %}
+{% block content %}
+<div class="container col-10">
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Delete post</legend>
+                <h3> Do you really want to Delete the post "{{ object.title }}" </h3>
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-danger" type="submit">Yes, Delete</button>
+                <button class="btn btn-outline-secondary" type="submit"> cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock content%}
