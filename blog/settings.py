@@ -25,9 +25,9 @@ key = os.environ.get('SECRETE_KEY')
 SECRET_KEY = key
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = os.environ.get('DEBUG')
+# DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
 DEBUG = True
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['my-first-djangoblog.herokuapp.com']
 
 
 # Application definition
