@@ -17,6 +17,7 @@
         <p class="article-content">{{ object.content }}</p>
     </div>
 </article>
+
 {% include 'home/comments.html' with url=object.pk %}
 
 {% endblock content %}
