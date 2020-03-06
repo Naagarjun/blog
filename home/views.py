@@ -8,10 +8,7 @@ from django.views.generic import (ListView, DetailView,
 
 
 def home(request):
-    context = {
-        'posts': Post.objects.all()
-    }
-    return render(request, 'home/home.html', context)
+    return render(request, 'home/index.html')
 
 
 class PostListView(ListView):
