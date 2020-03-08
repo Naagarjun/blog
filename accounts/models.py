@@ -16,7 +16,7 @@ class Profile(models.Model):
 
         super(Profile, self).save(*args, **kwargs)
 
-        img = Image.open(self.image.path)
+        img = Image.open(self.image)
 
         if img.height > 400 or img.width > 400:
             output_size = (430,360)
