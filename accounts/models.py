@@ -16,12 +16,12 @@ class Profile(models.Model):
         super().save(*args, **kwargs)
         mem_file = BytesIO()
 
-        img = Image.open(self.image)
+        img = Image.open(self.image.path)
 
         if img.height > 400 or img.width > 400:
             output_size = (400, 400)
             img.thumbnail(output_size, Image.ANTIALIAS)
             img.save(mem_file, 'JPEG', quality=80)
-            storage.save(self.image.name, mem_file)
+            storage.save(self.image.path, mem_file)
             mem_file.close()
             img.close()
