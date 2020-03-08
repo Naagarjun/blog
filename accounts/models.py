@@ -22,6 +22,6 @@ class Profile(models.Model):
             output_size = (400, 400)
             img.thumbnail(output_size, Image.ANTIALIAS)
             img.save(mem_file, 'JPEG', quality=80)
-            storage.save(self.image.path, mem_file)
+            storage.save(self.image.name, mem_file)
             mem_file.close()
             img.close()
