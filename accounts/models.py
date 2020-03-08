@@ -21,4 +21,4 @@ class Profile(models.Model):
         if img.height > 400 or img.width > 400:
             output_size = (430,360)
             img.thumbnail(output_size)
-            img.save(self.image.path)
+            img.save(self.image)
