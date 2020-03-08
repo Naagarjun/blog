@@ -16,7 +16,7 @@ class Profile(models.Model):
         super().save(*args, **kwargs)
         mem_file = BytesIO()
 
-        img = Image.open(self.image.path)
+        img = Image.open(self.image)
 
         if img.height > 400 or img.width > 400:
             output_size = (400, 400)
