@@ -31,11 +31,12 @@ urlpatterns = [
          name='password-reset'),
     path('password-reset/done/', auth_views.PasswordResetDoneView.as_view(template_name='accounts/password_reset_done.html'),
          name='password_reset_done'),
-
-    path('post/comments/', include('django_comments.urls'))
+    path('comments/', include('django_comments_xtd.urls')),   
 ]
 
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,
                           document_root=settings.MEDIA_ROOT)
+
+
