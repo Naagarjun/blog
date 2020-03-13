@@ -1,5 +1,4 @@
 {% extends "home/base.html" %}
-{% load crispy_forms_tags %}
 {% load threadedcomments_tags %}
 {% block content %}
 <article class="media content-section">
@@ -23,6 +22,6 @@
 <h2>Comments for {{ object.title }}:</h2>
 
 {% render_comment_list for object %}
-{% render_comment_form for object|crispy %}
+{% render_comment_form for object %}
 
 {% endblock content %}
