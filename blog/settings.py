@@ -48,6 +48,13 @@ INSTALLED_APPS = [
     'crispy_forms',
     'storages',
 ]
+INSTALLED_APPS += (
+    'threadedcomments',
+    'django_comments',
+    'django.contrib.sites',
+)
+
+COMMENTS_APP = 'threadedcomments'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

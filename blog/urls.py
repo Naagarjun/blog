@@ -19,6 +19,7 @@ from django.urls import path,  include
 from accounts import views as accounts_views
 from django.conf import settings
 from django.conf.urls.static import static
+from django.conf.urls import url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -32,6 +33,10 @@ urlpatterns = [
     path('password-reset/done/', auth_views.PasswordResetDoneView.as_view(template_name='accounts/password_reset_done.html'),
          name='password_reset_done'),
 ]
+
+urlpatterns += patterns('',
+    url(r'^articles/comments/', include('django_comments.urls')),
+)
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,
