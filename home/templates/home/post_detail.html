@@ -20,9 +20,9 @@
     </div>
 </article>
 
-<h2>Comments for {{ object.title|crispy }}:</h2>
+<h2>Comments for {{ object.title }}:</h2>
 
-{% render_comment_list for object|crispy %}
+{% render_comment_list for object %}
 {% render_comment_form for object|crispy %}
 
 {% endblock content %}
