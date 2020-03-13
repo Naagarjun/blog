@@ -20,6 +20,8 @@
 </article>
 {% get_comment_count for object as comment_count %}
 <div class="py-4 text-center">
+  <a href="{% url 'blog-home' %}">Back to the post list</a>
+  &nbsp;&sdot;&nbsp;
   {{ comment_count }} comment{{ comment_count|pluralize }}
   ha{{ comment_count|pluralize:"s,ve" }} been posted.
 </div>
