@@ -1,5 +1,4 @@
 {% extends "home/base.html" %}
-{% load threadedcomments_tags %}
 {% block content %}
 <article class="media content-section">
     <img class="rounded-circle article-img" src="{{ object.author.profile.image.url }}">
@@ -19,9 +18,6 @@
     </div>
 </article>
 
-<h2>Comments for {{ object.title }}:</h2>
-
-{% render_comment_list for object %}
-{% render_comment_form for object %}
+{% include 'home/comments.html' with url=object.id %}
 
 {% endblock content %}
