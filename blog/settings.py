@@ -54,9 +54,11 @@ INSTALLED_APPS += (
     'django_comments_xtd',
     'django_comments',
     'django.contrib.sites',
+    'blog',
 )
 
 COMMENTS_APP = 'django_comments_xtd'
+SITE_ID =1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
