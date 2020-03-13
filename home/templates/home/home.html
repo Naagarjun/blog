@@ -9,8 +9,7 @@
             <small class="text-muted">{{ post.date_posted | date:"F d, Y"}}</small>
         </div>
         <h2><a class="article-title" href="{% url 'post-detail' post.id post.slug %}">{{ post.title }}</a></h2>
-        
-        {% for object in object_list %}
+        <!-- {% for object in object_list %}
 		    {% get_comment_count for object as comment_count %}
 		    <p class="date">Published {{ object.publish }}
 
@@ -19,8 +18,7 @@
 		      {% endif %}
 
 		    </p>
-	    {% endfor %}
-	    
+	    {% endfor %} -->
         <p class="article-content">{{ post.content }}</p>
     </div>
 </article>
