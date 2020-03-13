@@ -54,7 +54,6 @@ INSTALLED_APPS += (
     'django_comments_xtd',
     'django_comments',
     'django.contrib.sites',
-    'blog',
 )
 
 COMMENTS_APP = 'django_comments_xtd'
@@ -182,3 +181,5 @@ COMMENTS_XTD_FROM_EMAIL = os.environ.get('EMAIL_USER')
 
 # Contact mail address to show in messages.
 COMMENTS_XTD_CONTACT_EMAIL = 'nagdrlg36@gmail.com'
+
+COMMENTS_XTD_MAX_THREAD_LEVEL = 3
