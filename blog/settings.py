@@ -182,8 +182,7 @@ COMMENTS_XTD_FROM_EMAIL = os.environ.get('EMAIL_USER')
 # Contact mail address to show in messages.
 COMMENTS_XTD_CONTACT_EMAIL = 'nagdrlg36@gmail.com'
 
-COMMENTS_XTD_MAX_THREAD_LEVEL = 3
-COMMENTS_XTD_LIST_ORDER = ('-thread_id', 'order')
+COMMENTS_XTD_MAX_THREAD_LEVEL = 0
 
 COMMENTS_XTD_CONFIRM_EMAIL = False
 
