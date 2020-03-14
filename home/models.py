@@ -4,14 +4,14 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 from django.utils.text import slugify
 from django_comments.moderation import CommentModerator
-from django_comments_xtd.moderation import moderator
+from django_comments_xtd.moderation import moderator, SpamModerator
 
 
 class Post(models.Model):
     title = models.CharField(max_length=100)
     slug = models.SlugField(default='', max_length=255)
     content = models.TextField()
-    date_posted = models.DateTimeField(default=timezone.now)
+    publish = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
