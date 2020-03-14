@@ -185,3 +185,7 @@ COMMENTS_XTD_CONTACT_EMAIL = 'nagdrlg36@gmail.com'
 COMMENTS_XTD_MAX_THREAD_LEVEL = 3
 
 COMMENTS_XTD_CONFIRM_MAIL = False
+
+MANAGERS = (
+    ('Arjun', 'nagdrlg36@gmail.com'),
+    )
