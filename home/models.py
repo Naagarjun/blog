@@ -3,8 +3,8 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 from django.urls import reverse
 from django.utils.text import slugify
-from django_comments.moderation import CommentModerator
-from django_comments_xtd.moderation import moderator, SpamModerator
+# from django_comments.moderation import CommentModerator
+# from django_comments_xtd.moderation import moderator, SpamModerator
 
 
 class Post(models.Model):
@@ -28,9 +28,9 @@ class Post(models.Model):
         self.slug = slugify(value, allow_unicode = True)
         super().save(*args, **kwargs)
 
-class PostCommentModerator(CommentModerator):
-    email_notification = True
-    auto_moderate_field = 'publish'
-    moderate_after = 365
+# class PostCommentModerator(CommentModerator):
+#     email_notification = True
+#     auto_moderate_field = 'publish'
+#     moderate_after = 365
 
-moderator.register(Post, PostCommentModerator)
+# moderator.register(Post, PostCommentModerator)
