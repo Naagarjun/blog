@@ -1,11 +1,11 @@
 {% extends "home/base.html" %}
-{% laod thumbnail %}
+{% load thumbnail %}
 {% load comments %}
 {% load comments_xtd%}
 {% block content %}
 <article class="media content-section">
      <img  src="{{ user.profile.image.url }}">
-        {% thumbnail item.image ‘400x300’ as im %}
+        {% thumbnail item.image '400x300' as im %}
             <img class="rounded-circle account-img" src="{{ im.url }}">
         {% endthumbnail %}
     <div class="media-body">
