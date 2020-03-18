@@ -45,8 +45,11 @@ INSTALLED_APPS = [
     # User apps
     'home.apps.HomeConfig',
     'accounts.apps.AccountsConfig',
+    # Extra packages
+
     'crispy_forms',
     'storages',
+    'sorl.thumbnail',
 ]
 
 # Django_comments_xtd apps
