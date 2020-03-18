@@ -3,7 +3,6 @@
 {% block content %}
 {% for post in posts %}
 <article class="media content-section">
-     
      {% thumbnail item.image '200x100' as im %}
             <img class="rounded-circle account-img" src="{{ im.url }}">
      {% endthumbnail %}
