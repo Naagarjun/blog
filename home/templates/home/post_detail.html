@@ -5,11 +5,9 @@
 {% block content %}
 <article class="media content-section">
      <img  src="{{ user.profile.image.url }}">
-        <div class="rounded-circle account-img">
         {% thumbnail item.image '200x100' as im %}
-            <img src="{{ im.url }}">
+            <img class="rounded-circle account-img" src="{{ im.url }}">
         {% endthumbnail %}
-     </div>
     <div class="media-body">
         <div class="article-metadata">
             <a class="mr-2" href="{% url 'user-post' object.author.username %}">{{ object.author }}</a>
