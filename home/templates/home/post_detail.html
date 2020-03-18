@@ -5,7 +5,7 @@
 {% block content %}
 <article class="media content-section">
      {% thumbnail item.image '200x100' as im %}
-            <img class="rounded-circle account-img" src="{{ im.url }}">
+            <img class="rounded-circle account-img" src="{{ im.name }}">
      {% endthumbnail %}
     <div class="media-body">
         <div class="article-metadata">
