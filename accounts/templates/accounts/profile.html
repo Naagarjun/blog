@@ -4,7 +4,9 @@
 {% block content %}
 <div class="content-section">
     <div class="media">
+        {% thumbnail item.image '200x100' as im %}
         <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+        {% endthumbnail %}
         <div class="media-body">
             <h2 class="account-heading">{{ user.username }}</h2>
             <p class="text-secondary">{{ user.email }}</p>
