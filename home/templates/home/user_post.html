@@ -4,7 +4,7 @@
 {% for post in posts %}
 <article class="media content-section">
         {% thumbnail item.image '200x100' as im %}
-            <img class="rounded-circle account-img" src="{{ user.profile.im.url }}">
+            <img class="rounded-circle account-img" src="{{ im.url }}">
         {% endthumbnail %}
     <div class="media-body">
         <div class="article-metadata">
