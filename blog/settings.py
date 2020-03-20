@@ -49,7 +49,6 @@ INSTALLED_APPS = [
 
     'crispy_forms',
     'storages',
-    'sorl.thumbnail',
 ]
 
 # Django_comments_xtd apps
