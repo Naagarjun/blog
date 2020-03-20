@@ -4,8 +4,8 @@
 {% load comments_xtd%}
 {% block content %}
 <article class="media content-section">
-     {% thumbnail item.image '200x100' as im %}
-            <img class="rounded-circle account-img" src="{{ user.profile.im.url }}">
+     {% thumbnail user.profile.image.url '200x100' as im %}
+            <img class="rounded-circle account-img" src="{{ im }}">
         {% endthumbnail %}
     <div class="media-body">
         <div class="article-metadata">
