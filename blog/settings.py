@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     # Extra packages
     'crispy_forms',
     'storages',
+    'sorl.thumbnail',
 ]
 
 # Django_comments_xtd apps

@@ -1,9 +1,10 @@
 {% extends "home/base.html" %}
-{% load comments %}
-{% load comments_xtd%}
+{% load thumbnail %}
 {% block content %}
 <article class="media content-section">
-    <img class="rounded-circle article-img" src="{{ object.author.profile.image.url }}">
+    {% thumbnail object.author.profile.image '400x300' as im %}
+    <img class="rounded-circle article-img" src="{{ im.url }}">
+    {% endthumbnail %}
     <div class="media-body">
         <div class="article-metadata">
             <a class="mr-2" href="{% url 'user-post' object.author.username %}">{{ object.author }}</a>
