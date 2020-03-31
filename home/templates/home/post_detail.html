@@ -8,7 +8,7 @@
     <div class="media-body">
         <div class="article-metadata">
             <a class="mr-2" href="{% url 'user-post' object.author.username %}">{{ object.author }}</a>
-            <small class="text-muted">{{ object.publish | date:"F d, Y"}}</small>
+            <small class="text-muted">{{ object.date_posted | date:"F d, Y"}}</small>
             {% if object.author == user %}
             <div>
                 <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'post-update' object.id %}"> update </a>
@@ -20,37 +20,15 @@
         <p class="article-content">{{ object.content }}</p>
     </div>
 </article>
-
-<!-- Commenting system by django-comment-xtd -->
-
-<!-- {% get_comment_count for object as comment_count %}
-<div class="py-4 text-center">
-  <a href="{% url 'blog-home' %}">Back to the post list</a>
-  &nbsp;&sdot;&nbsp;
-  {{ comment_count }} comment{{ comment_count|pluralize }}
-  ha{{ comment_count|pluralize:"s,ve"}} been posted.
-</div>
-
-<div class="comment">
-  <h4 class="text-center">Your comment</h4>
-  <div class="well">
-    {% render_comment_form for object %}
-  </div>
-</div>
-
-{% if comment_count %}
-<ul class="media-list">
-  {% render_xtdcomment_tree for object %}
-</ul>
-{% endif %}
- -->
-
- <!-- Commmenting systen by Disqus -->
- <div id="disqus_thread"></div>
+<!-- <div id="disqus_thread"></div>
 <script>
 
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
 var disqus_config = function () {
-this.page.url = 'https://my-first-djangoblog.herokuapp.com/{% url 'post-detail' post.id post.slug %}';  // Replace PAGE_URL with your page's canonical URL variable
+this.page.url = 'http://localhost:8000/{% url 'post-detail' post.id post.slug %}';  // Replace PAGE_URL with your page's canonical URL variable
 this.page.identifier = '{% url 'post-detail' post.id post.slug %}'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 };
 
@@ -61,7 +39,6 @@ s.setAttribute('data-timestamp', +new Date());
 (d.head || d.body).appendChild(s);
 })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> -->
 
 {% endblock content %}
