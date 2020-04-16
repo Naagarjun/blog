@@ -6,8 +6,8 @@ from django.utils.text import slugify
 
 
 class Post(models.Model):
-    title = models.CharField(max_length=100)
-    slug = models.SlugField(default='', max_length=255)
+    title = models.CharField(max_length=500)
+    slug = models.SlugField(null= False, unique=True)
     content = models.TextField()
     date_posted = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -16,12 +16,12 @@ class Post(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        kwargs={'pk': self.pk,
+        kwargs={
                 'slug':self.slug 
                 }
         return reverse('post-detail', kwargs= kwargs)
 
-    def save(self, *args, **kwargs):
-        value = self.title
-        self.slug = slugify(value, allow_unicode = True)
-        super().save(*args, **kwargs)
+    # def save(self, *args, **kwargs):
+    #     value = self.title
+    #     self.slug = slugify(value, allow_unicode = True)
+    #     super().save(*args, **kwargs)

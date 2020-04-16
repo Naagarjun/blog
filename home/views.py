@@ -32,7 +32,7 @@ class UserPostListView(ListView):
 
 class PostDetailView(DetailView):
     model = Post
-    query_pk_and_slug = True
+    
 
 
 class PostCreateView(CreateView):
