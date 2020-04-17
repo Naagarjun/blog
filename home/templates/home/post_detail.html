@@ -11,8 +11,8 @@
             <small class="text-muted">{{ object.date_posted | date:"F d, Y"}}</small>
             {% if object.author == user %}
             <div>
-                <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'post-update' object.slug %}"> update </a>
-                <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'post-delete' object.slug %}"> Delete </a>
+                <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'post-update' object.id %}"> update </a>
+                <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'post-delete' object.id %}"> Delete </a>
             </div>
             {% endif %}
         </div>
@@ -40,5 +40,6 @@ s.setAttribute('data-timestamp', +new Date());
 })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
 
 {% endblock content %}
