@@ -38,6 +38,7 @@ class PostDetailView(DetailView):
 class PostCreateView(CreateView):
     model = Post
     fields = ['title', 'content']
+    slug_field = {'slug': ('title',)}
 
     def form_valid(self, form):
         form.instance.author = self.request.user

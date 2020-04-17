@@ -15,11 +15,11 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
-    # def get_absolute_url(self):
-    #     kwargs={
-    #             'slug':self.slug 
-    #             }
-    #     return reverse('post-detail', kwargs= kwargs)
+    def get_absolute_url(self):
+        kwargs={
+                'slug':self.slug 
+                }
+        return reverse('post-detail', kwargs= kwargs)
 
     # def save(self, *args, **kwargs):
     #     value = self.title
