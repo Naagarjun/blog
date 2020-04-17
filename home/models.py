@@ -16,7 +16,8 @@ class Post(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('post-detail', kwargs={'slug':self.slug})
+        data = {'slug':self.slug}
+        return reverse('post-detail', kwargs=data)
 
     def save(self, *args, **kwargs):
         value = self.title
