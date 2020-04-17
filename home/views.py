@@ -35,14 +35,19 @@ class PostDetailView(DetailView):
     
 
 
-class PostCreateView(CreateView):
+class PostCreate(CreateView):
     model = Post
-    fields = ['title', 'content']
-    slug_field = {'slug': ('title',)}
+    fields = ['title', 'content', ]
+    slug_field = {'slug':('title',)}
 
-    def form_valid(self, form):
-        form.instance.author = self.request.user
-        return super().form_valid(form)
+# class PostCreateView(CreateView):
+#     model = Post
+#     fields = ['title', 'content']
+#     slug_field = {'slug': ('title',)}
+
+#     def form_valid(self, form):
+#         form.instance.author = self.request.user
+#         return super().form_valid(form)
 
 
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
