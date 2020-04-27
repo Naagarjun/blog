@@ -5,6 +5,8 @@ from .models import Post
 from django.views.generic import (ListView, DetailView,
                                   CreateView, UpdateView, DeleteView
                                   )
+import requests
+import json
 
 
 def home(request):
@@ -71,3 +73,12 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 def about(request):
     return render(request, 'home/about.html')
+
+def api_data(request):
+
+    url = requests.get('http://api.icndb.com/jokes/random')
+    p_data = json.loads(url.text)
+    context = {
+        'api_data': p_data['value']['joke']
+    }
+    return render(request, "home/chuck_norris_jokes.html", context)

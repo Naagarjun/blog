@@ -3,7 +3,7 @@ from . import views
 from .views import (PostListView, PostDetailView,
                     PostCreateView, PostUpdateView,
                     PostDeleteView, UserPostListView,
-                    home
+                    home, api_data, 
                     )
 
 urlpatterns = [
@@ -15,4 +15,5 @@ urlpatterns = [
     path('post/<int:pk>/update', PostUpdateView.as_view(), name='post-update'),
     path('post/<int:pk>/delete', PostDeleteView.as_view(), name='post-delete'),
     path('about/', views.about, name='blog-about'),
+    path('chuck-norris-jokes/', views.api_data, name='chuck-norris-jokes'),
 ]
