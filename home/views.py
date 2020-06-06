@@ -3,14 +3,12 @@ from django.contrib.auth.models import User
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from .models import Post
 from django.views.generic import (ListView, DetailView,
-                                  CreateView, UpdateView, DeleteView
+                                  CreateView, UpdateView, 
+                                  DeleteView,
                                   )
 import requests
 import json
 
-
-def home(request):
-    return render(request, 'home/index.html')
 
 
 class PostListView(ListView):

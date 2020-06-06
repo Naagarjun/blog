@@ -25,8 +25,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
-DEBUG = True
+DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
+
 
 
 ALLOWED_HOSTS = ['my-first-djangoblog.herokuapp.com']
@@ -52,14 +52,7 @@ INSTALLED_APPS = [
     'sorl.thumbnail',
 ]
 
-# Django_comments_xtd apps
-INSTALLED_APPS += (
-    'django_comments_xtd',
-    'django_comments',
-    'django.contrib.sites',
-)
 
-COMMENTS_APP = 'django_comments_xtd'
 SITE_ID =1
 
 MIDDLEWARE = [
@@ -173,22 +166,3 @@ AWS_S3_SIGNATURE_VERSION = "s3v4"
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 django_heroku.settings(locals())
-
-# django_comments_xtd settings
-
-
-COMMENTS_XTD_SALT = (b"Timendi causa est nescire. "
-                     b"Aequam memento rebus in arduis servare mentem.")
-# Source mail address used for notifications.
-COMMENTS_XTD_FROM_EMAIL = os.environ.get('EMAIL_USER')
-
-# Contact mail address to show in messages.
-COMMENTS_XTD_CONTACT_EMAIL = 'nagdrlg36@gmail.com'
-
-COMMENTS_XTD_MAX_THREAD_LEVEL = 0
-
-COMMENTS_XTD_CONFIRM_EMAIL = False
-
-MANAGERS = (
-    ('Arjun', 'nagdrlg36@gmail.com'),
-    )
