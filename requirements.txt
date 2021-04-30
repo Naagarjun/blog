@@ -30,7 +30,7 @@ six==1.13.0
 sqlparse==0.3.0
 sorl-thumbnail==12.6.3
 typed-ast==1.4.0
-urllib3==1.25.7
+urllib3==1.25.8
 whitenoise==5.0.1
 wrapt==1.11.2
 requests==2.23.0
